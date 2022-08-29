@@ -102,6 +102,9 @@ SQLITE_API void sqlite3_activate_see(const char* zPassPhrase);
 /*
 ** Define functions for the configuration of the wxSQLite3 encryption extension
 */
+SQLITE_API int sqlite3mc_cipher_count();
+SQLITE_API int sqlite3mc_cipher_index(const char* cipherName);
+SQLITE_API const char* sqlite3mc_cipher_name(int cipherIndex);
 SQLITE_API int sqlite3mc_config(sqlite3* db, const char* paramName, int newValue);
 SQLITE_API int sqlite3mc_config_cipher(sqlite3* db, const char* cipherName, const char* paramName, int newValue);
 SQLITE_API unsigned char* sqlite3mc_codec_data(sqlite3* db, const char* zDbName, const char* paramName);

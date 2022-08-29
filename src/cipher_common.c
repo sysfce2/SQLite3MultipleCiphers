@@ -50,7 +50,7 @@ sqlite3mcGetCipherParameter(CipherParams* cipherParams, const char* paramName)
 
 typedef struct _CipherName
 {
-  char m_name[32];
+  char m_name[CIPHER_NAME_MAXLEN];
 } CipherName;
 
 static int globalCipherCount = 0;

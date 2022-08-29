@@ -392,7 +392,7 @@ mcCheckValidName(char* name)
 
   /* Check for valid cipher name length */
   nl = strlen(name);
-  if (nl < 1 || nl > CIPHER_NAME_MAXLEN)
+  if (nl < 1 || nl >= CIPHER_NAME_MAXLEN)
     return SQLITE_ERROR;
 
   /* Check for already registered names */

@@ -132,6 +132,46 @@ sqlite3mc_config(sqlite3* db, const char* paramName, int newValue)
 }
 
 SQLITE_API int
+sqlite3mc_cipher_count()
+{
+  return sqlite3mcGetGlobalCipherCount();
+}
+
+SQLITE_API int
+sqlite3mc_cipher_index(const char* cipherName)
+{
+  int count = sqlite3mcGetGlobalCipherCount();
+  int j = 0;
+  for (j = 0; j < count && globalCodecDescriptorTable[j].m_name[0] != 0; ++j)
+  {
+    if (sqlite3_stricmp(cipherName, globalCodecDescriptorTable[j].m_name) == 0) break;
+  }
+  return (j < count && globalCodecDescriptorTable[j].m_name[0] != 0) ? j + 1 : -1;
+}
+
+SQLITE_API const char*
+sqlite3mc_cipher_name(int cipherIndex)
+{
+  static char cipherName[CIPHER_NAME_MAXLEN] = "";
+  int count = sqlite3mcGetGlobalCipherCount();
+  int j = 0;
+  cipherName[0] = '\0';
+  if (cipherIndex > 0 && cipherIndex <= count)
+  {
+    for (j = 0; j < count && globalCodecDescriptorTable[j].m_name[0] != 0; ++j)
+    {
+      if (cipherIndex == j + 1) break;
+    }
+    if (j < count && globalCodecDescriptorTable[j].m_name[0] != 0)
+    {
+      strncpy(cipherName, globalCodecDescriptorTable[j].m_name, CIPHER_NAME_MAXLEN - 1);
+      cipherName[CIPHER_NAME_MAXLEN - 1] = '\0';
+    }
+  }
+  return cipherName;
+}
+
+SQLITE_API int
 sqlite3mc_config_cipher(sqlite3* db, const char* cipherName, const char* paramName, int newValue)
 {
   int value = -1;
