@@ -881,10 +881,10 @@ sqlite3mcFileControlPragma(sqlite3* db, const char* zDbName, int op, void* pArg)
     else if (sqlite3StrICmp(pragmaName, "hexkey") == 0)
     {
       int nValue = sqlite3Strlen30(pragmaValue);
-      if (((nValue & 1) == 0) && (sqlite3mcIsHexKey(pragmaValue, nValue) != 0))
+      if (((nValue & 1) == 0) && (sqlite3mcIsHexKey((const unsigned char*) pragmaValue, nValue) != 0))
       {
-        char* zHexKey = sqlite3_malloc(nValue/2);
-        sqlite3mcConvertHex2Bin(pragmaValue, nValue, zHexKey);
+        unsigned char* zHexKey = sqlite3_malloc(nValue/2);
+        sqlite3mcConvertHex2Bin((const unsigned char*) pragmaValue, nValue, zHexKey);
         rc = sqlite3_key_v2(db, zDbName, zHexKey, nValue/2);
         sqlite3_free(zHexKey);
         if (rc == SQLITE_OK)
@@ -931,10 +931,10 @@ sqlite3mcFileControlPragma(sqlite3* db, const char* zDbName, int op, void* pArg)
     else if (sqlite3StrICmp(pragmaName, "hexrekey") == 0)
     {
       int nValue = sqlite3Strlen30(pragmaValue);
-      if (((nValue & 1) == 0) && (sqlite3mcIsHexKey(pragmaValue, nValue) != 0))
+      if (((nValue & 1) == 0) && (sqlite3mcIsHexKey((const unsigned char*) pragmaValue, nValue) != 0))
       {
-        char* zHexKey = sqlite3_malloc(nValue/2);
-        sqlite3mcConvertHex2Bin(pragmaValue, nValue, zHexKey);
+        unsigned char* zHexKey = sqlite3_malloc(nValue/2);
+        sqlite3mcConvertHex2Bin((const unsigned char*) pragmaValue, nValue, zHexKey);
         rc = sqlite3_rekey_v2(db, zDbName, zHexKey, nValue/2);
         sqlite3_free(zHexKey);
         if (rc == SQLITE_OK)

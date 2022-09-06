@@ -156,6 +156,8 @@ typedef struct _CipherParams
 **   m_decryptPage     - Function pointer for function DecryptPage
 */
 
+typedef struct BtShared BtSharedMC;
+
 typedef void* (*AllocateCipher_t)(sqlite3* db);
 typedef void  (*FreeCipher_t)(void* cipher);
 typedef void  (*CloneCipher_t)(void* cipherTo, void* cipherFrom);
@@ -163,7 +165,7 @@ typedef int   (*GetLegacy_t)(void* cipher);
 typedef int   (*GetPageSize_t)(void* cipher);
 typedef int   (*GetReserved_t)(void* cipher);
 typedef unsigned char* (*GetSalt_t)(void* cipher);
-typedef void  (*GenerateKey_t)(void* cipher, BtShared* pBt, char* userPassword, int passwordLength, int rekey, unsigned char* cipherSalt);
+typedef void  (*GenerateKey_t)(void* cipher, BtSharedMC* pBt, char* userPassword, int passwordLength, int rekey, unsigned char* cipherSalt);
 typedef int   (*EncryptPage_t)(void* cipher, int page, unsigned char* data, int len, int reserved);
 typedef int   (*DecryptPage_t)(void* cipher, int page, unsigned char* data, int len, int reserved, int hmacCheck);
 
