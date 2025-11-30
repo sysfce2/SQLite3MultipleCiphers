@@ -10,13 +10,8 @@ The code was mainly developed under Windows, but was tested under Linux as well.
 
 ## Version information
 
-* 2.2.5 - *November 2025*
-  - Based on SQLite version 3.51.0
-  - Enabled extension PERCENTILE
-  - Updated build files
-  - Fixed issue #215 "Internal compiler error for VC++ 2017"
-  - Fixed issue #218 "Raw keys in SQLCipher notation are not handled correctly"
-  - Fixed issue #221 "Allow initializing library without default VFS"
+* 2.2.6 - *November 2025*
+  - Based on SQLite version 3.51.1
 
 For further version information please consult the [CHANGELOG](CHANGELOG.md).
 
