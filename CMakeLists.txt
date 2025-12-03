@@ -250,8 +250,6 @@ endif()
 
 if (CMAKE_SYSTEM_NAME STREQUAL "Linux"
     OR CMAKE_SYSTEM_NAME STREQUAL "Darwin")
-  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -msse4.2 -maes")
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -msse4.2 -maes")
   set(SQLITE3MC_LINK_LIBRARIES
     pthread
     dl
@@ -267,10 +265,6 @@ elseif (CMAKE_SYSTEM_NAME STREQUAL "Android")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mvaes")
   endif()
 else()
-  if (CMAKE_C_COMPILER_ID STREQUAL "GNU")
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -msse4.2 -maes")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -msse4.2 -maes")
-  endif()
   set(SHARED_LIB_EXPORT_DEFINITION "__declspec(dllexport)")
 endif()
 
