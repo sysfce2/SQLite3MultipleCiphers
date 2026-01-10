@@ -1,4 +1,4 @@
-November 6, 2025
+January 10, 2026
 ================
 
 This package contains an experimental variant for "SQLite3 Multiple
