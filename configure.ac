@@ -1,10 +1,10 @@
 dnl Process this script with autoconf to create configure for sqlite3mc library
 dnl
-dnl Copyright (C) 2019-2025 Ulrich Telle <github@telle-online.de>
+dnl Copyright (C) 2019-2026 Ulrich Telle <github@telle-online.de>
 dnl
 dnl This file is covered by the same licence as the entire SQLite3 Multiple Ciphers package.
 
-AC_INIT([sqlite3mc], [2.2.6], [github@telle-online.de])
+AC_INIT([sqlite3mc], [2.2.7], [github@telle-online.de])
 
 dnl This is the version tested with, might work with earlier ones.
 AC_PREREQ([2.69])
