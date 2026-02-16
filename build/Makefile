@@ -16,13 +16,13 @@ ifeq ($(config),debug_win32)
   sqlite3mc_dllicu_config = debug_win32
   sqlite3mc_shellicu_config = debug_win32
 
-else ifeq ($(config),debug_win64)
-  sqlite3mc_lib_config = debug_win64
-  sqlite3mc_dll_config = debug_win64
-  sqlite3mc_shell_config = debug_win64
-  sqlite3mc_libicu_config = debug_win64
-  sqlite3mc_dllicu_config = debug_win64
-  sqlite3mc_shellicu_config = debug_win64
+else ifeq ($(config),debug_x64)
+  sqlite3mc_lib_config = debug_x64
+  sqlite3mc_dll_config = debug_x64
+  sqlite3mc_shell_config = debug_x64
+  sqlite3mc_libicu_config = debug_x64
+  sqlite3mc_dllicu_config = debug_x64
+  sqlite3mc_shellicu_config = debug_x64
 
 else ifeq ($(config),release_win32)
   sqlite3mc_lib_config = release_win32
@@ -32,13 +32,13 @@ else ifeq ($(config),release_win32)
   sqlite3mc_dllicu_config = release_win32
   sqlite3mc_shellicu_config = release_win32
 
-else ifeq ($(config),release_win64)
-  sqlite3mc_lib_config = release_win64
-  sqlite3mc_dll_config = release_win64
-  sqlite3mc_shell_config = release_win64
-  sqlite3mc_libicu_config = release_win64
-  sqlite3mc_dllicu_config = release_win64
-  sqlite3mc_shellicu_config = release_win64
+else ifeq ($(config),release_x64)
+  sqlite3mc_lib_config = release_x64
+  sqlite3mc_dll_config = release_x64
+  sqlite3mc_shell_config = release_x64
+  sqlite3mc_libicu_config = release_x64
+  sqlite3mc_dllicu_config = release_x64
+  sqlite3mc_shellicu_config = release_x64
 
 else
   $(error "invalid configuration $(config)")
@@ -99,9 +99,9 @@ help:
 	@echo ""
 	@echo "CONFIGURATIONS:"
 	@echo "  debug_win32"
-	@echo "  debug_win64"
+	@echo "  debug_x64"
 	@echo "  release_win32"
-	@echo "  release_win64"
+	@echo "  release_x64"
 	@echo ""
 	@echo "TARGETS:"
 	@echo "   all (default)"

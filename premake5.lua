@@ -2,7 +2,7 @@
 --   static or shared library
 --   Encryption support for Multiple Ciphers
 --   Debug or Release
---   Win32 or Win64
+--   Win32 or x64
 
 dofile "wx_config.lua"
 
@@ -39,8 +39,6 @@ project "sqlite3mc_lib"
     end
   else
     toolset("gcc")
---    buildoptions { "-msse4.2", "-maes" }
---    buildoptions { "-march=native" }
   end
   makesettings { "include config.gcc" }
 
@@ -406,7 +404,7 @@ project "sqlite3mc_dllicu"
 
   filter { "platforms:Win32" }
     libdirs { "$(LIBICU_PATH)/lib" }
-  filter { "platforms:Win64" }
+  filter { "platforms:x64" }
     libdirs { "$(LIBICU_PATH)/lib64" }
   filter {}
 
@@ -512,7 +510,7 @@ project "sqlite3mc_shellicu"
 
   filter { "platforms:Win32" }
     libdirs { "$(LIBICU_PATH)/lib" }
-  filter { "platforms:Win64" }
+  filter { "platforms:x64" }
     libdirs { "$(LIBICU_PATH)/lib64" }
   filter {}
 

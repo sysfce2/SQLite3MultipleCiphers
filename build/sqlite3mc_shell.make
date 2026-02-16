@@ -53,10 +53,10 @@ LIBS += ../bin/gcc/lib/debug/sqlite3mc.lib
 LDDEPS += ../bin/gcc/lib/debug/sqlite3mc.lib
 ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib32 -m32
 
-else ifeq ($(config),debug_win64)
+else ifeq ($(config),debug_x64)
 TARGETDIR = ../bin/gcc/lib/debug
 TARGET = $(TARGETDIR)/sqlite3mc_shell_x64.exe
-OBJDIR = obj/gcc/Win64/Debug/sqlite3mc_shell
+OBJDIR = obj/gcc/x64/Debug/sqlite3mc_shell
 DEFINES += -D_WINDOWS -DWIN32 -D_CRT_SECURE_NO_WARNINGS -D_CRT_SECURE_NO_DEPRECATE -D_CRT_NONSTDC_NO_WARNINGS -D_CRT_NONSTDC_NO_DEPRECATE -DDEBUG -D_DEBUG -DSQLITE3MC_USE_MINIZ=$(SQLITE3MC_USE_MINIZ) -DSQLITE_SHELL_IS_UTF8=1 -DSQLITE_ENABLE_SESSION=1 -DSQLITE_ENABLE_DBPAGE_VTAB=1 -DSQLITE_OMIT_SHELL_REGEXP -DSQLITE_OMIT_SHELL_SERIES -DSQLITE_OMIT_SHELL_SHATHREE -DSQLITE_USER_AUTHENTICATION=0
 ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -g
 ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -g
@@ -75,10 +75,10 @@ LIBS += ../bin/gcc/lib/release/sqlite3mc.lib
 LDDEPS += ../bin/gcc/lib/release/sqlite3mc.lib
 ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib32 -m32 -s
 
-else ifeq ($(config),release_win64)
+else ifeq ($(config),release_x64)
 TARGETDIR = ../bin/gcc/lib/release
 TARGET = $(TARGETDIR)/sqlite3mc_shell_x64.exe
-OBJDIR = obj/gcc/Win64/Release/sqlite3mc_shell
+OBJDIR = obj/gcc/x64/Release/sqlite3mc_shell
 DEFINES += -D_WINDOWS -DWIN32 -D_CRT_SECURE_NO_WARNINGS -D_CRT_SECURE_NO_DEPRECATE -D_CRT_NONSTDC_NO_WARNINGS -D_CRT_NONSTDC_NO_DEPRECATE -DNDEBUG -DSQLITE3MC_USE_MINIZ=$(SQLITE3MC_USE_MINIZ) -DSQLITE_SHELL_IS_UTF8=1 -DSQLITE_ENABLE_SESSION=1 -DSQLITE_ENABLE_DBPAGE_VTAB=1 -DSQLITE_OMIT_SHELL_REGEXP -DSQLITE_OMIT_SHELL_SERIES -DSQLITE_OMIT_SHELL_SHATHREE -DSQLITE_USER_AUTHENTICATION=0
 ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2
 ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2
@@ -140,7 +140,7 @@ ifeq (posix,$(SHELLTYPE))
 	$(SILENT) rm -rf $(OBJDIR)
 else
 	$(SILENT) if exist $(subst /,\\,$(TARGET)) del $(subst /,\\,$(TARGET))
-	$(SILENT) if exist $(subst /,\\,$(GENERATED)) del /s /q $(subst /,\\,$(GENERATED))
+	$(SILENT) $(foreach f,$(subst /,\\,$(GENERATED)),if exist $(f) del /s /q $(f) >nul &)
 	$(SILENT) if exist $(subst /,\\,$(OBJDIR)) rmdir /s /q $(subst /,\\,$(OBJDIR))
 endif
 

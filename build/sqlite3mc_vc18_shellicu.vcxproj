@@ -30,25 +30,25 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -72,29 +72,29 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(ProjectDir)..\bin\vc17\lib\debug\</OutDir>
-    <IntDir>$(ProjectDir)obj\vc17\Win32\Debug\sqlite3mc_shellicu\</IntDir>
+    <OutDir>$(ProjectDir)..\bin\vc18\lib\debug\</OutDir>
+    <IntDir>$(ProjectDir)obj\vc18\Win32\Debug\sqlite3mc_shellicu\</IntDir>
     <TargetName>sqlite3mc_shellicu</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(ProjectDir)..\bin\vc17\lib\debug\</OutDir>
-    <IntDir>$(ProjectDir)obj\vc17\x64\Debug\sqlite3mc_shellicu\</IntDir>
+    <OutDir>$(ProjectDir)..\bin\vc18\lib\debug\</OutDir>
+    <IntDir>$(ProjectDir)obj\vc18\x64\Debug\sqlite3mc_shellicu\</IntDir>
     <TargetName>sqlite3mc_shellicu_x64</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(ProjectDir)..\bin\vc17\lib\release\</OutDir>
-    <IntDir>$(ProjectDir)obj\vc17\Win32\Release\sqlite3mc_shellicu\</IntDir>
+    <OutDir>$(ProjectDir)..\bin\vc18\lib\release\</OutDir>
+    <IntDir>$(ProjectDir)obj\vc18\Win32\Release\sqlite3mc_shellicu\</IntDir>
     <TargetName>sqlite3mc_shellicu</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(ProjectDir)..\bin\vc17\lib\release\</OutDir>
-    <IntDir>$(ProjectDir)obj\vc17\x64\Release\sqlite3mc_shellicu\</IntDir>
+    <OutDir>$(ProjectDir)..\bin\vc18\lib\release\</OutDir>
+    <IntDir>$(ProjectDir)obj\vc18\x64\Release\sqlite3mc_shellicu\</IntDir>
     <TargetName>sqlite3mc_shellicu_x64</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
@@ -212,7 +212,7 @@
     <ResourceCompile Include="..\src\sqlite3mc_shell.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="sqlite3mc_vc17_libicu.vcxproj">
+    <ProjectReference Include="sqlite3mc_vc18_libicu.vcxproj">
       <Project>{319D19FE-1D96-3850-46C8-1DD53220185C}</Project>
     </ProjectReference>
   </ItemGroup>

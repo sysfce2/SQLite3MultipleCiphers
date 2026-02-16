@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Version bump to version 2.3.0
+- Unified architecture names in build files (use _x64_ instead of _Win64_) (to avoid VS2026 conflicts)
+
+### Added
+
+- Added build support for VS2026
+
+### Fixed
+
+- Add support for issue [#222](../../issues/222) - Make AEGIS code compilable for ARM64EC
+- Fixed issue [#226](../../issues/226) - Handle raw key and salt material correctly when using the plaintext header option
+
 ## [2.2.7] - 2026-01-10
 
 ### Changed
